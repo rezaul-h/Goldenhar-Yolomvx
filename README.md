@@ -177,7 +177,7 @@ Depending on your configured entrypoints, aggregated artifacts are exported to:
 
 ---
 
-## 8. Reporting (publication-ready tables and figures)
+## 8. Reporting
 
 Report generation is controlled via:
 - `configs/reports/report.yaml`
@@ -226,7 +226,7 @@ Expected exports:
 
 ---
 
-## 10. Reproducibility checklist (recommended for journal submission)
+## 10. Reproducibility checklist
 
 - **Fixed seeds per run**: default seeds `[42, 43, 44, 45]` (configurable).
 - **Split manifests are exported** as YAML to ensure deterministic partitioning.
@@ -244,7 +244,7 @@ To fully reproduce a table/figure:
 
 ---
 
-## 11. Notebooks (auditing and diagnostics)
+## 11. Notebooks
 
 `notebooks/` contains:
 - `01_data_audit.ipynb`: dataset integrity checks (labels, class distribution, leakage hints)
