@@ -260,7 +260,7 @@ See `LICENSE`.
 
 ---
 
-## 14. Contact and contributions
+## 13. Contact and contributions
 For issues, please open a GitHub issue describing:
 - dataset (D1/D2), split (75_25/80_20/85_15), run and seed,
 - model config used,
