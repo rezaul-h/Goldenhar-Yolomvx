@@ -1,6 +1,6 @@
-# Goldenhar-YOLOMvX: Reproducible Detection + Efficiency + Explainability Pipeline (Goldenhar-CFID)
+# Goldenhar-YOLOMvX
 
-This repository provides a **fully reproducible experimental pipeline** for **multi-class object detection** on **Goldenhar-CFID**, covering (i) **dataset processing and leakage-aware splits**, (ii) **model training across multiple seeded runs**, (iii) **comprehensive evaluation** (P/R, mAP@0.5, mAP@0.5:0.95, efficiency), and (iv) **explainability (XAI)** with both qualitative overlays and quantitative XAI metrics.
+This repository provides an experimental pipeline for **multi-class object detection** on **Goldenhar-CFID**, covering (i) **dataset processing and leakage-aware splits**, (ii) **model training across multiple seeded runs**, (iii) **comprehensive evaluation** (P/R, mAP@0.5, mAP@0.5:0.95, efficiency), and (iv) **explainability (XAI)** with both qualitative overlays and quantitative XAI metrics.
 
 All experiments are driven by versioned YAML configurations, and outputs are exported in standardized machine-readable formats to facilitate statistical aggregation and reporting.
 
@@ -71,9 +71,9 @@ src/
   eval/            # evaluation + efficiency + stats
   reports/         # tables/plots builders
   xai/             # CAMs, rollout, occlusion, XAI metrics
-  utils/           # IO, bbox, meters, reproducibility, device helpers
+  utils/           # IO, bbox, meters, device helpers
 
-scripts/           # reproducible CLI entrypoints for end-to-end experiments
+scripts/           # CLI entrypoints for end-to-end experiments
 notebooks/         # audit, error analysis, and XAI inspection notebooks
 ```
 
@@ -226,21 +226,14 @@ Expected exports:
 
 ---
 
-## 10. Reproducibility checklist
+## 10. Checklist
 
 - **Fixed seeds per run**: default seeds `[42, 43, 44, 45]` (configurable).
 - **Split manifests are exported** as YAML to ensure deterministic partitioning.
 - **Train-only augmentation** is enforced for D2 by configuration.
 - **All metrics are exported per-run** as JSON for transparent aggregation.
 - **Run logs and checkpoints** are saved with deterministic naming.
-- **Configuration-first workflow**: no hidden hyperparameters.
-
-To fully reproduce a table/figure:
-1) build processed dataset  
-2) generate split manifests  
-3) train models for all runs  
-4) run evaluation + aggregation  
-5) build reports  
+- **Configuration-first workflow**: no hidden hyperparameters. 
 
 ---
 
@@ -250,8 +243,6 @@ To fully reproduce a table/figure:
 - `01_data_audit.ipynb`: dataset integrity checks (labels, class distribution, leakage hints)
 - `02_error_analysis.ipynb`: failure modes, per-class confusions, qualitative inspection
 - `03_xai_inspection.ipynb`: XAI sanity checks and overlay inspection
-
-These notebooks are intended for **analysis**, not for the primary reproducible pipeline.
 
 ---
 
