@@ -1,0 +1,19 @@
+efficiency:
+  report:
+    - params_m
+    - gflops
+    - fps
+    - latency_ms
+    - vram_mb
+    - train_time_per_epoch_s
+
+profiling:
+  img_size: 640
+  batch_size: 1
+  warmup_iters: 50
+  timed_iters: 200
+  device: cuda
+
+export:
+  save_csv: true
+  save_path: outputs/metrics/aggregated/efficiency_summary.csv

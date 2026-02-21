@@ -1,0 +1,32 @@
+dataset:
+  name: D1
+  description: "Goldenhar-CFID original dataset (no balancing)."
+  task: detection
+  img_size: 640
+
+paths:
+  root: data/processed/D1_yolo640
+  images_dir: images
+  labels_dir: labels
+
+classes:
+  names:
+    - Cleft Lip
+    - Epibulbar Dermoid
+    - Eyelid Coloboma
+    - Facial Asymmetry
+    - Malocclusion
+    - Microtia
+    - Vertebral Abnormalities
+  num_classes: 7
+
+split_manifests:
+  base_dir: data/splits
+  supported_splits: ["75_25", "80_20", "85_15"]
+  runs: 4
+  seeds: [42, 43, 44, 45]
+
+validation:
+  enforce_no_leakage: true
+  require_label_files: true
+  allow_empty_labels: false

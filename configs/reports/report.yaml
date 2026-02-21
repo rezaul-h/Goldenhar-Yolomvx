@@ -1,0 +1,21 @@
+dataset: D2
+split: 85_15
+metrics: [mAP50, mAP50_95, precision, recall]
+key_metric: mAP50
+decimals: 2
+scale_100: true
+
+# Optional: confusion matrix plotting (expects a CSV matrix file)
+confusion_matrix:
+  path: outputs/metrics/raw/confusion_matrix_D2_85_15.csv
+  class_names:
+    - Cleft Lip
+    - Epibulbar Dermoid
+    - Eyelid Coloboma
+    - Facial Asymmetry
+    - Malocclusion
+    - Microtia
+    - Vertebral Abnormalities
+  cmap: viridis
+  normalize: null
+  title: Confusion Matrix (D2, 85/15)

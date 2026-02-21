@@ -1,0 +1,27 @@
+cams:
+  methods:
+    - name: gradcam
+      layer_hint: "last_conv"
+    - name: gradcampp
+      layer_hint: "last_conv"
+    - name: layercam
+      layer_hint: "last_conv"
+    - name: eigencam
+      layer_hint: "last_conv"
+    - name: hirescam
+      layer_hint: "last_conv"
+
+generation:
+  target: "predicted_class"
+  normalize: true
+  overlay_alpha: 0.45
+  resize_to_input: true
+
+sampling:
+  num_samples_per_class: 50
+  strategy: "stratified"
+  seed: 42
+
+export:
+  save_dir: outputs/figures/xai
+  save_format: "png"

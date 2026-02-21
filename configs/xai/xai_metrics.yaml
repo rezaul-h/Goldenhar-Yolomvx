@@ -1,0 +1,34 @@
+xai_metrics:
+  report:
+    - iou_heat
+    - point_acc
+    - relevance
+    - fidelity
+
+iou_heat:
+  threshold: 0.50
+  heatmap_binarization: "otsu"
+
+point_acc:
+  topk: 1
+  point_definition: "max_activation"
+
+relevance:
+  normalization: "minmax"
+  aggregate: "mean"
+
+fidelity:
+  occlusion:
+    method: "insertion_deletion"
+    steps: 50
+    perturbation: "blur"
+    blur_ksize: 21
+  score: "auc"
+
+aggregation:
+  runs: 4
+  summary:
+    - mean
+    - std
+    - ci95
+  ci_method: "t"

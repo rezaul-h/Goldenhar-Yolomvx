@@ -1,0 +1,26 @@
+model: yolomvx
+num_classes: 7
+
+train:
+  img_size: 640
+  epochs: 200
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 0.0005
+  optimizer: adamw
+  warmup_epochs: 5
+  min_lr_ratio: 0.05
+  grad_clip: 10.0
+
+runtime:
+  prefer_cuda: true
+  device: "cuda"
+  num_workers: 4
+
+yolomvx:
+  num_classes: 7
+  width_mult: 1.0
+  depth_mult: 1.0
+  act: silu
+  stem_reparam: false
+  strides: [8, 16, 32]

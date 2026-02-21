@@ -1,0 +1,26 @@
+dataset: D1
+split_ratio:
+  train: 0.85
+  val: 0.15
+split_name: "85_15"
+run: 2
+seed: 43
+
+paths:
+  root: "data/processed/D1_yolo640"
+  images_dir: "images"
+  labels_dir: "labels"
+  path_style: "relative_to_root"
+
+integrity:
+  enforce_no_leakage: true
+  augmentation_train_only: true
+  allow_duplicates: false
+
+train_images: []
+val_images: []
+
+summary:
+  n_train: 0
+  n_val: 0
+  note: "Populate lists with image relative paths; labels inferred by same stem."

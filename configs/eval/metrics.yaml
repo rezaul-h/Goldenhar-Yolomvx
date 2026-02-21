@@ -1,0 +1,19 @@
+metrics:
+  detection:
+    primary: "mAP_0.5:0.95"
+    report:
+      - precision
+      - recall
+      - mAP_0.5
+      - mAP_0.5:0.95
+    per_class: true
+    conf_threshold: 0.25
+    iou_threshold: 0.50
+
+aggregation:
+  runs: 4
+  summary:
+    - mean
+    - std
+    - ci95
+  ci_method: "t"

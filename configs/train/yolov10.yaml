@@ -1,0 +1,37 @@
+experiment:
+  model_name: yolov10
+  img_size: 640
+  epochs: 60
+  batch_size: 16
+  workers: 8
+  device: auto
+  amp: true
+  deterministic: true
+
+optimization:
+  optimizer: adamw
+  lr0: 0.0008
+  weight_decay: 0.01
+  warmup_epochs: 3
+  gradient_clip_norm: 10.0
+
+scheduler:
+  name: cosine
+  min_lr: 0.00001
+
+early_stopping:
+  enabled: true
+  patience: 15
+  monitor: "metrics/mAP_0.5:0.95"
+  mode: max
+
+augmentation:
+  mosaic: 1.0
+  mixup: 0.1
+  fliplr: 0.5
+  scale: 0.5
+  translate: 0.1
+
+logging:
+  save_dir: outputs
+  project: goldenhar-baselines
